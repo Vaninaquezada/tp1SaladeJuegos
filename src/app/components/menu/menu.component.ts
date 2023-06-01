@@ -20,10 +20,7 @@ export class MenuComponent {
 
     this.authSvc.user$.subscribe((usuario) => {
       this.usuario = usuario;
-      console.log('menu', this.usuario.email);
     });
-    console.log('menu', this.usuario.email);
-    console.log('user$', this.user$);
   }
   async logOut() {
     try {

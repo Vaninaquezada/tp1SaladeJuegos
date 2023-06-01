@@ -21,7 +21,7 @@ export class ChatComponent {
   }
 
   ngOnInit(): void {
-    //  this.messages = this.chatSer.getChatMessages();
+    this.messages = this.chatSer.getChatMessages();
   }
 
   toggleState() {
@@ -38,9 +38,9 @@ export class ChatComponent {
   }
 
   sendMessage() {
-    //  this.chatSer.addChatMessage(this.newMsg).then(() => {
-    //  this.newMsg = '';
-    // this.content.scrollToBottom();
-    // });
+    this.chatSer.addChatMessage(this.newMsg).then(() => {
+      this.newMsg = '';
+      // this.content.scrollToBottom();
+    });
   }
 }

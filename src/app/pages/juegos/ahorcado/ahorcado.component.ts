@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Words } from 'src/app/clases/words';
-
+import { ListadoService } from 'src/app/servicios/listado.service';
 @Component({
   selector: 'app-ahorcado',
   templateUrl: './ahorcado.component.html',
@@ -33,7 +33,7 @@ export class AhorcadoComponent {
   start: string;
   palabrita = '';
   resultado: string;
-  constructor() {
+  constructor(private listado: ListadoService) {
     this.letters = [];
     this.hiddenWord = [];
     this.remainingAttempts = 0;
@@ -63,6 +63,8 @@ export class AhorcadoComponent {
         correctas: 'N/A',
         errores: (this.MAX_ATTEMPTS - this.remainingAttempts).toString(),
       };
+
+      this.listado.addResultado(res);
     }
     if (this.playerLoses()) {
       this.mensaje = 'Perdiste. La palabra era ' + this.getUnhiddenWord();
@@ -75,6 +77,7 @@ export class AhorcadoComponent {
         juego: 'Ahorcado',
         errores: (this.MAX_ATTEMPTS - this.remainingAttempts).toString(),
       };
+      this.listado.addResultado(res);
     }
   }
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { ListadoService } from 'src/app/servicios/listado.service';
 @Component({
   selector: 'app-mayoromenor',
   templateUrl: './mayoromenor.component.html',
@@ -19,7 +19,7 @@ export class MayoromenorComponent {
   start = 'visible';
   perdiste = '';
   mensaje = '';
-  constructor() {}
+  constructor(private listado: ListadoService) {}
 
   ngOnInit(): void {}
 
@@ -84,6 +84,7 @@ export class MayoromenorComponent {
       correctas: this.correctas,
       juego: 'Mayor o Menor',
     };
+    this.listado.addResultado(this.resultado);
 
     this.numero = 0;
     this.numeroNuevo = 0;

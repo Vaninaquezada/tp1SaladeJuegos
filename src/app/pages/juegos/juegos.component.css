@@ -2,7 +2,7 @@
     margin: 0;
     height: 100vh;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
   }
   
@@ -283,3 +283,103 @@
     transform: translate(0%, 0%) scaleY(1);
   }
   
+
+
+  .link-fourth {
+    color: #7e56ed;
+    transition: color 1s cubic-bezier(0.32, 0, 0.67, 0);
+    line-height: 1em;
+  }
+  
+  .link-fourth:hover {
+    color: #111;
+    transition: color 1s cubic-bezier(0.33, 1, 0.68, 1);
+  
+    /* Thanks Chris Coyier, you got my back always. https://css-tricks.com/different-transitions-for-hover-on-hover-off/ */
+  }
+  
+  .link-fourth::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #7e56ed;
+  
+    clip-path: circle(0% at 50% calc(50%));
+    transition: clip-path 1s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  
+  .link-fourth:hover::before {
+    clip-path: circle(100% at 50% 50%);
+  }
+  
+  .link-fourth::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #151515;
+  
+
+    clip-path: polygon(
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%
+    );
+    
+    transition: clip-path 1s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  
+  .link-fourth:hover::after {
+   
+    clip-path: polygon(
+      20% 45%,
+      10% 40%,
+      30% 30%,
+      40% 35%,
+      60% 35%,
+      70% 30%,
+      90% 40%,
+      80% 45%,
+      60% 35%,
+      40% 35%,
+      20% 45%,
+      20% 55%,
+      10% 60%,
+      30% 70%,
+      40% 65%,
+      60% 65%,
+      70% 70%,
+      90% 60%,
+      80% 55%,
+      60% 65%,
+      40% 65%,
+      20% 55%
+    );
+   
+  }

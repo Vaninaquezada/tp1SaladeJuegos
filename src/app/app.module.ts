@@ -19,6 +19,10 @@ import { ChatComponent } from './components/chat/chat.component';
 import { JuegosComponent } from './pages/juegos/juegos.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire/compat';
+import { ListadoComponent } from './pages/listado/listado.component';
+import { EncuestaComponent } from './pages/encuesta/encuesta.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,9 +33,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MenuComponent,
     RegistroComponent,
     ChatComponent,
+    ListadoComponent,
+    EncuestaComponent,
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
@@ -42,6 +49,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
