@@ -13,6 +13,18 @@
               formControlName="email"
               value="{{ usuario }}"
             />
+            <span
+              class="error ion-padding"
+              *ngIf="loginForm.get('email')!.errors?.['required'] && loginForm.get('email')!.touched"
+            >
+              El email es requerido
+            </span>
+            <span
+              class="error ion-padding"
+              *ngIf="loginForm.get('email')!.errors?.['email'] "
+            >
+              No cumple el formato de email.
+            </span>
           </div>
           <div class="form-group">
             <label for="password">Clave</label>
@@ -23,6 +35,12 @@
               formControlName="password"
               value="{{ clave }}"
             />
+            <span
+              class="error ion-padding"
+              *ngIf="loginForm.get('password')!.errors?.['required'] && loginForm.get('password')!.touched"
+            >
+              La contraseña es requerida.
+            </span>
           </div>
           <button class="fill btn-lg btn-block" type="submit">Ingresar</button>
         </form>

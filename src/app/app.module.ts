@@ -23,6 +23,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { ListadoComponent } from './pages/listado/listado.component';
 import { EncuestaComponent } from './pages/encuesta/encuesta.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ResultadoEncuestaComponent } from './pages/resultado-encuesta/resultado-encuesta.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
     ChatComponent,
     ListadoComponent,
     EncuestaComponent,
+    ResultadoEncuestaComponent,
   ],
   imports: [
     BrowserModule,

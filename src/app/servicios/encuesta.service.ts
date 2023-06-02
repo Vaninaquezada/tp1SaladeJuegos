@@ -22,7 +22,7 @@ export class EncuestaService {
   addEncuesta(encuesta: Encuesta) {
     this.getUserMail();
     return this.afs.collection('encuesta').add({
-      user: this.mail,
+      user: encuesta.user,
       pregunta1: encuesta.pregunta1,
       respuesta1: encuesta.respuesta1,
       pregunta2: encuesta.pregunta2,

@@ -6,6 +6,7 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { QuiensoyComponent } from './pages/quiensoy/quiensoy.component';
 import { EncuestaComponent } from './pages/encuesta/encuesta.component';
 import { ListadoComponent } from './pages/listado/listado.component';
+import { ResultadoEncuestaComponent } from './pages/resultado-encuesta/resultado-encuesta.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: 'quiensoy', component: QuiensoyComponent },
   { path: 'encuesta', component: EncuestaComponent },
+  { path: 'resultadoencuesta', component: ResultadoEncuestaComponent },
   { path: 'listado', component: ListadoComponent },
   {
     path: 'juegos',

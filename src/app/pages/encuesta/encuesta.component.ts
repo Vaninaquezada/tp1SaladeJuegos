@@ -48,6 +48,7 @@ export class EncuestaComponent {
       pregunta2: ['', Validators.required],
       pregunta1: ['', Validators.required],
       pregunta3: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
     });
   }
   enviar() {
@@ -63,6 +64,7 @@ export class EncuestaComponent {
       edad: this.formGroup.get('edad')!.value,
       telefono: this.formGroup.get('telefono')!.value,
       sexo: this.formGroup.get('sexo')!.value,
+      user: this.formGroup.get('email')!.value,
     };
     console.log(this.formGroup.get('apellido')!.value);
 

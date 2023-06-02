@@ -69,9 +69,21 @@
                 type="email"
                 class="form-control mail"
                 id="email"
-                placeholder="{{ mail }}"
-                readonly
+                value="{{ mail }}"
+                formControlName="email"
               />
+              <span
+                class="error ion-padding"
+                *ngIf="formGroup.get('email')!.errors?.['required'] && formGroup.get('email')!.touched"
+              >
+                El email es requerido
+              </span>
+              <span
+                class="error ion-padding"
+                *ngIf="formGroup.get('email')!.errors?.['email'] "
+              >
+                No cumple el formato de email.
+              </span>
             </div>
             <div class="col-6">
               <label for="address" class="form-label">Edad</label>
